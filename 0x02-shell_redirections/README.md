@@ -7,7 +7,7 @@
 - Excercise 5: tail -10 /etc/passwd Display the last 10 lines of /etc/passwd.
 - Excercise 6: head -10 /etc/passwd Display the first 10 lines of /etc/passwd.
 - Excercise 7: head -3 iacta | tail +3Write a script that displays the third line of the file iacta.
-- Excercise 8: echo "Best School" > "\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)" Write a shell script that creates a file named exactly \*\\'"Best School"\'\\*$\?\*\*\*\*\*:) containing the text Best School ending by a new line.
+- Excercise 8: echo "Best School" > ""\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)"" Write a shell script that creates a file named exactly "\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)" containing the text Best School ending by a new line.
 - Excercise 9: ls -la > ls_cwd_content  Write a script that writes into the file ls_cwd_content the result of the command ls -la. If the file ls_cwd_content already exists, it should be overwritten. If the file ls_cwd_content does not exist, create it.
 - Excercise 10: echo -en "" | tail --lines=1 iacta >> iacta Write a script that duplicates the last line of the file iacta.
 -Excercise 11: find . -name '*.js' -type f -delete Write a script that deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.

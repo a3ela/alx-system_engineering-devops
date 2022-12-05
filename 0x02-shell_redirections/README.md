@@ -1,7 +1,28 @@
 # 0x02-shell redirections
 
-- Excercise 1: script that prints “Hello, World”.
-- Excercise 2: script that displays a confused smiley "(Ôo)'.
-- Excercise 3: Display the content of the /etc/passwd file.
-- Excercise 4: Display the content of /etc/passwd and /etc/hosts.
-- Excercise 5: Display the last 10 lines of /etc/passwd.
+- Excercise 1: echo Hello, World  script that prints “Hello, World”.
+- Excercise 2: echo "\"(Ôo)'"  script that displays a confused smiley "(Ôo)'.
+- Excercise 3: cat /etc/passwd Display the content of the /etc/passwd file.
+- Excercise 4: cat /etc/passwd /etc/hosts Display the content of /etc/passwd and /etc/hosts.
+- Excercise 5: tail -10 /etc/passwd Display the last 10 lines of /etc/passwd.
+- Excercise 6: head -10 /etc/passwd Display the first 10 lines of /etc/passwd.
+- Excercise 7: head -3 iacta | tail +3Write a script that displays the third line of the file iacta.
+- Excercise 8: echo "Best School" > "\*\\'"Best School"\'\\*$\?\*\*\*\*\*:)" Write a shell script that creates a file named exactly \*\\'"Best School"\'\\*$\?\*\*\*\*\*:) containing the text Best School ending by a new line.
+- Excercise 9: ls -la > ls_cwd_content  Write a script that writes into the file ls_cwd_content the result of the command ls -la. If the file ls_cwd_content already exists, it should be overwritten. If the file ls_cwd_content does not exist, create it.
+- Excercise 10: echo -en "" | tail --lines=1 iacta >> iacta Write a script that duplicates the last line of the file iacta.
+-Excercise 11: find . -name '*.js' -type f -delete Write a script that deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.
+- Excercise 12: find -mindepth 1 -type d | wc -l Write a script that counts the number of directories and sub-directories in the current directory.
+- Excercise 13: ls -t | head Create a script that displays the 10 newest files in the current directory..
+- Excercise 14: sort | uniq -u Create a script that takes a list of words as input and prints only words that appear exactly once.
+- Excercise 15:grep -i bin /etc/passwd | wc -l Display the number of lines that contain the pattern “bin” in the file /etc/passwd.
+- Excercise 16: grep -iA 3 root /etc/passwd Display lines containing the pattern “root” and 3 lines after them in the file /etc/passwd.
+- Excercise 17: grep -iv bin /etc/passwd Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.
+- Excercise 18: grep -i "^[a-z]" /etc/ssh/sshd_config Display all lines of the file /etc/ssh/sshd_config starting with a letter.
+- Excercise 19: tr Ac Ze Replace all characters A and c from input to Z and e respectively.
+- Excercise 20: tr -d cC Create a script that removes all letters c and C from input.
+- Excercise 21: rev Write a script that reverse its input. 
+- Excercise 22: cut -d':' -f1,6 /etc/passwd | sort Write a script that displays all users and their home directories, sorted by users.
+- Excercise 100: find . -empty -printf "%f\n" Write a command that finds all empty files and directories in the current directory and all sub-directories.
+- Excercise 101: find -type f -name "*.gif" | rev | cut -d "/" -f 1 | cut -d '.' -f 2- | rev | LC_ALL=C sort -f  Write a script that lists all the files with a .gif extension in the current directory and all its sub-directories.
+- Excercise 102: cut -c 1 | tr -d '\n' | sort     An acrostic is a poem (or other form of writing) in which the first letter (or syllable, or word) of each line (or paragraph, or other recurring feature in the text) spells out a word, message or the alphabet. The word comes from the French acrostiche from post-classical Latin acrostichis). As a form of constrained writing, an acrostic can be used as a mnemonic device to aid memory retrieval.
+- Excericse 103: tail -n +2 | cut -f -1 | sort -k 1 | uniq -c | sort -rnk 1 | head -n 11 | rev | cut -d ' ' -f -1 | rev   Write a script that parses web servers logs in TSV format as input and displays the 11 hosts or IP addresses which did the most requests.

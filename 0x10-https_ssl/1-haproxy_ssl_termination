@@ -15,15 +15,13 @@ defaults
    timeout client  10000
    timeout server  10000
 
-frontend www-https
-    bind   0.0.0.0:80
-    bind   0.0.0.0:443 ssl crt /etc/haproxy/certs/get-daniel.tech.pem
-    redirect scheme https if !{ ssl_fc }
-    stats uri /haproxy?stats
-    option forwardfor
-    default_backend www-backend
+frontend www-http
+        bind *:80
+        bind *:443 ssl crt /etc/haproxy/certs/www.itsmeabela.tech.pem
+        redirect scheme https code 301 if !{ ssl_fc }
+        default_backend web-backend
 
-backend www-backend
-    balance  roundrobin
-    server 213760-web-01 54.237.48.16:80 check
-    server 213760-web-02 18.234.145.133:80 check
+backend web-backend
+        balance roundrobin
+        server 213760-web-01 web-01.itsmeabela.tech:80 check
+        server 213760-web-02 web-02.itsmeabela.tech:80 check

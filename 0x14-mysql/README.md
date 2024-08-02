@@ -20,10 +20,6 @@
 
 | Task | File |
 | ---- | ---- |
-| 0. Install MySQL | [SOON](./) |
-| 1. Let us in! | [SOON](./) |
-| 2. If only you could see what I've seen with your eyes | [SOON](./) |
-| 3. Quite an experience to live in fear, isn't it? | [SOON](./) |
 | 4. Setup a Primary-Replica infrastructure using MySQL | [4-mysql_configuration_primary](./4-mysql_configuration_primary), [4-mysql_configuration_replica](./4-mysql_configuration_replica) |
 | 5. MySQL backup | [5-mysql_backup](./5-mysql_backup) |
 

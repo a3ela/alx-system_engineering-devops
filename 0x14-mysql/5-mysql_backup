@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# Generates a compressed archive of a MySQL dump.
-mysqldump -u root -p "$1" --opt --single-transaction --quick --create-options --routines --events --triggers --all-databases > backup.sql
-if [ $? -ne 0 ]; then
-  echo "mysqldump failed"
-  exit 1
-fi
+# Generates a compressed archive of a MySQL dump
 
-tar -cvzf "$(date +%d-%m-%Y)".tar.gz backup.sql
+# variables
+day=$(date +"%d")
+month=$(date +"%m")
+year=$(date +"%Y")
+file_name="$day-$month-$year.tar.gz"
+
+mysqldump --all-databases -u root --password="$1" > backup.sql
+tar -czvf "$file_name" backup.sql

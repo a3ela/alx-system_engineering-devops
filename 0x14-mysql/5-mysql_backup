@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 # Generates a compressed archive of a MySQL dump.
-mysqldump -uroot -p "$1" --all-databases > backup.sql
+mysqldump -u root -p "$1" --opt --single-transaction --quick --create-options --routines --events --triggers --all-databases > backup.sql
+if [ $? -ne 0 ]; then
+  echo "mysqldump failed"
+  exit 1
+fi
+
 tar -cvzf "$(date +%d-%m-%Y)".tar.gz backup.sql
